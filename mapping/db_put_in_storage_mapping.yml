@@ -1,0 +1,11 @@
+farmpower_f: 
+    INSERT INTO js_power_cwt (s_id, f_id, jid, date_time, real_power, cwt_speed, cwt_temp, cwt_humi, cwt_direc) 
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+farmpower_g:
+    INSERT INTO js_power_cwt (s_id, f_id, jid, date_time, real_power, real_qrad, real_zrad, real_srad, cwt_humi, 
+    cwt_temp) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+farmpower_f_onlyp: 
+    INSERT INTO js_power_cwt (s_id, f_id, date_time, real_power) VALUES (%s, %s, %s, %s)
+
+other_predict_pv: 
+    INSERT INTO o_predict_v (opid, fcode, dtime, pv) VALUES (%s, %s, %s, %s)

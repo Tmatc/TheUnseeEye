@@ -1,0 +1,20 @@
+o_predict_v1: 
+    SELECT dtime, pv FROM o_predict_v WHERE fcode = '%s' AND dtime >= '%s' AND dtime < '%s' ORDER BY dtime
+# 获取某个集电线的实际对象数据
+js_syspower_jdx_f: 
+    SELECT date_time AS dtime, real_power, cwt_speed, cwt_temp, cwt_humi, cwt_direc From 
+    js_power_cwt WHERE jid='%s' AND date_time >= '%s' AND date_time < '%s' ORDER BY date_time
+# 获取某个场站的所有集电线的实际对象数据
+js_syspower_f: 
+    SELECT date_time AS dtime, real_power, cwt_speed, cwt_temp, cwt_humi, cwt_direc From 
+    js_power_cwt WHERE f_id='%s' AND date_time >= '%s' AND date_time < '%s' ORDER BY date_time
+js_syspower_jdx_g: 
+    SELECT date_time AS dtime, real_power, cwt_temp, cwt_humi, real_qrad, real_zrad, real_srad From 
+    js_power_cwt WHERE jid='%s' AND date_time >= '%s' AND date_time < '%s' ORDER BY date_time
+js_syspower_g: 
+    SELECT date_time AS dtime, real_power, cwt_temp, cwt_humi, real_qrad, real_zrad, real_srad From 
+    js_power_cwt WHERE f_id='%s' AND date_time >= '%s' AND date_time < '%s'
+js_weather: 
+    SELECT %s FROM js_weather WHERE jid='%s' AND nwp_id='%s' AND DateTime>='%s' AND DateTime<'%s' ORDER BY DateTime
+
+    

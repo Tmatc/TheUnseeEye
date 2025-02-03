@@ -1,0 +1,37 @@
+# 插入场站基础信息
+farminfo_insert: 
+    INSERT INTO js_farm_manager (f_id, turbine_num, ins_capa_total, run_capa_total, farm_name, region, service_type,
+    service_status, collection_way, zk_phone, jdx, c_time) VALUES 
+    (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+# 插入集电线基础信息（风）
+farmjdx_insert_f: 
+    INSERT INTO js_jdx_manager (jid, f_id, farmcode, sbnum, ins_cap, run_cap, sbtype, use_nwp, possess_nwp, 
+    c_time) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+# 插入集电线基础信息（光）
+farmjdx_insert_g: 
+    INSERT INTO js_jdx_manager (jid, f_id, farmcode, sbnum, ins_cap, run_cap, sbtype, nbtype, use_nwp, possess_nwp, 
+    c_time) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+# 插入设备基础信息（风）
+sb_info_f:
+    INSERT INTO js_equipment_manger (sid,name,gecj,model,fj_base,failure_rate,powereff) VALUES
+    (%s, %s, %s, %s, %s, %s, %s)
+# 插入风电的出场理论功率曲线
+power_curve: 
+    INSERT INTO js_wind_turbine (ID, sid, wind_speed, power) VALUES (%s, %s, %s, %s)
+
+# 插入气象数据（风）
+nwpdata_insert: 
+    INSERT INTO js_weather (wh_id, jid, nwp_id, WFarm, DateTime, humidity10, humidity30, humidity50, humidity60,
+    humidity70, humidity80, humidity90, humidity100, humidity120, humidity130, humidity140, humidity160, humidity170,
+    pressure10,pressure30,pressure50,pressure60,pressure70,pressure80,pressure90,pressure100,pressure120,pressure130,
+    pressure140,pressure160,pressure170, temperature10,temperature30,temperature50,temperature60,temperature70,
+    temperature80,temperature90,temperature100,temperature120,temperature130,temperature140,temperature160,temperature170,
+    direction10,direction30,direction50,direction60,direction70,direction80,direction90,direction100,direction120,
+    direction130,direction140,direction160,direction170,speed10,speed30,speed50,speed60,speed70,speed80,speed90,
+    speed100,speed120,speed130,speed140,speed160,speed170,radiation10,radiation30,radiation50,radiation60,radiation70,
+    radiation80,radiation90,radiation100,cloud) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    
+farminfo_update: 
+    UPDATE js_farm_manager
