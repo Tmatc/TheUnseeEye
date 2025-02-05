@@ -18,4 +18,12 @@ class Configer():
         Configer.database = conf.get("database", "db")
         Configer.port = int(conf.get("database", "port"))
         Configer.charset = conf.get("database", "charset")
-        
+    
+    @staticmethod
+    def load_remote_file(ini_file:str):
+        conf = ConfigParser()
+        conf.read(ini_file)
+        Configer.host = conf.get("remote", "hostname")
+        Configer.user = conf.get("remote", "username")
+        Configer.password = conf.get("remote", "password")
+        Configer.port = int(conf.get("remote", "port"))
